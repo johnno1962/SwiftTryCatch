@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  SwiftTryCatch
+//  SwiftFlow
 //
 //  Created by John Holdsworth on 31/03/2015.
 //  Copyright (c) 2015 John Holdsworth. All rights reserved.

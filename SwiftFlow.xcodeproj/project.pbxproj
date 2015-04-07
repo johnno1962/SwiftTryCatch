@@ -12,9 +12,9 @@
 		BBDCF07B1ACA8446003352FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBDCF0791ACA8446003352FD /* Main.storyboard */; };
 		BBDCF07D1ACA8446003352FD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBDCF07C1ACA8446003352FD /* Images.xcassets */; };
 		BBDCF0801ACA8446003352FD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDCF07E1ACA8446003352FD /* LaunchScreen.xib */; };
-		BBDCF08C1ACA8446003352FD /* SwiftTryCatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF08B1ACA8446003352FD /* SwiftTryCatchTests.swift */; };
-		BBDCF0961ACA8CAB003352FD /* SwiftTryCatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF0951ACA8CAB003352FD /* SwiftTryCatch.swift */; };
-		BBDCF09A1ACA8D40003352FD /* SwiftTryCatch.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF0991ACA8D40003352FD /* SwiftTryCatch.m */; };
+		BBDCF08C1ACA8446003352FD /* SwiftFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF08B1ACA8446003352FD /* SwiftFlowTests.swift */; };
+		BBDCF0961ACA8CAB003352FD /* SwiftFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF0951ACA8CAB003352FD /* SwiftFlow.swift */; };
+		BBDCF09A1ACA8D40003352FD /* SwiftFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF0991ACA8D40003352FD /* SwiftFlow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,25 +23,25 @@
 			containerPortal = BBDCF0681ACA8446003352FD /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BBDCF06F1ACA8446003352FD;
-			remoteInfo = SwiftTryCatch;
+			remoteInfo = SwiftFlow;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BBDCF0701ACA8446003352FD /* SwiftTryCatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTryCatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBDCF0701ACA8446003352FD /* SwiftFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDCF0741ACA8446003352FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBDCF0751ACA8446003352FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBDCF0771ACA8446003352FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBDCF07A1ACA8446003352FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBDCF07C1ACA8446003352FD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BBDCF07F1ACA8446003352FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		BBDCF0851ACA8446003352FD /* SwiftTryCatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTryCatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBDCF0851ACA8446003352FD /* SwiftFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDCF08A1ACA8446003352FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BBDCF08B1ACA8446003352FD /* SwiftTryCatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTryCatchTests.swift; sourceTree = "<group>"; };
-		BBDCF0951ACA8CAB003352FD /* SwiftTryCatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftTryCatch.swift; sourceTree = SOURCE_ROOT; };
-		BBDCF0971ACA8D3F003352FD /* SwiftTryCatch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftTryCatch-Bridging-Header.h"; sourceTree = "<group>"; };
-		BBDCF0981ACA8D40003352FD /* SwiftTryCatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftTryCatch.h; sourceTree = SOURCE_ROOT; };
-		BBDCF0991ACA8D40003352FD /* SwiftTryCatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftTryCatch.m; sourceTree = SOURCE_ROOT; };
+		BBDCF08B1ACA8446003352FD /* SwiftFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftFlowTests.swift; sourceTree = "<group>"; };
+		BBDCF0951ACA8CAB003352FD /* SwiftFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftFlow.swift; sourceTree = SOURCE_ROOT; };
+		BBDCF0971ACA8D3F003352FD /* SwiftFlow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftFlow-Bridging-Header.h"; sourceTree = "<group>"; };
+		BBDCF0981ACA8D40003352FD /* SwiftFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftFlow.h; sourceTree = SOURCE_ROOT; };
+		BBDCF0991ACA8D40003352FD /* SwiftFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftFlow.m; sourceTree = SOURCE_ROOT; };
 		BBDCF09B1ACAA3DE003352FD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -67,8 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				BBDCF09B1ACAA3DE003352FD /* README.md */,
-				BBDCF0721ACA8446003352FD /* SwiftTryCatch */,
-				BBDCF0881ACA8446003352FD /* SwiftTryCatchTests */,
+				BBDCF0721ACA8446003352FD /* SwiftFlow */,
+				BBDCF0881ACA8446003352FD /* SwiftFlowTests */,
 				BBDCF0711ACA8446003352FD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,18 +76,18 @@
 		BBDCF0711ACA8446003352FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BBDCF0701ACA8446003352FD /* SwiftTryCatch.app */,
-				BBDCF0851ACA8446003352FD /* SwiftTryCatchTests.xctest */,
+				BBDCF0701ACA8446003352FD /* SwiftFlow.app */,
+				BBDCF0851ACA8446003352FD /* SwiftFlowTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BBDCF0721ACA8446003352FD /* SwiftTryCatch */ = {
+		BBDCF0721ACA8446003352FD /* SwiftFlow */ = {
 			isa = PBXGroup;
 			children = (
-				BBDCF0981ACA8D40003352FD /* SwiftTryCatch.h */,
-				BBDCF0991ACA8D40003352FD /* SwiftTryCatch.m */,
-				BBDCF0951ACA8CAB003352FD /* SwiftTryCatch.swift */,
+				BBDCF0981ACA8D40003352FD /* SwiftFlow.h */,
+				BBDCF0991ACA8D40003352FD /* SwiftFlow.m */,
+				BBDCF0951ACA8CAB003352FD /* SwiftFlow.swift */,
 				BBDCF0751ACA8446003352FD /* AppDelegate.swift */,
 				BBDCF0771ACA8446003352FD /* ViewController.swift */,
 				BBDCF0791ACA8446003352FD /* Main.storyboard */,
@@ -95,25 +95,27 @@
 				BBDCF07E1ACA8446003352FD /* LaunchScreen.xib */,
 				BBDCF0731ACA8446003352FD /* Supporting Files */,
 			);
-			path = SwiftTryCatch;
+			name = SwiftFlow;
+			path = SwiftFlow;
 			sourceTree = "<group>";
 		};
 		BBDCF0731ACA8446003352FD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BBDCF0971ACA8D3F003352FD /* SwiftTryCatch-Bridging-Header.h */,
+				BBDCF0971ACA8D3F003352FD /* SwiftFlow-Bridging-Header.h */,
 				BBDCF0741ACA8446003352FD /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BBDCF0881ACA8446003352FD /* SwiftTryCatchTests */ = {
+		BBDCF0881ACA8446003352FD /* SwiftFlowTests */ = {
 			isa = PBXGroup;
 			children = (
-				BBDCF08B1ACA8446003352FD /* SwiftTryCatchTests.swift */,
+				BBDCF08B1ACA8446003352FD /* SwiftFlowTests.swift */,
 				BBDCF0891ACA8446003352FD /* Supporting Files */,
 			);
-			path = SwiftTryCatchTests;
+			name = SwiftFlowTests;
+			path = SwiftFlowTests;
 			sourceTree = "<group>";
 		};
 		BBDCF0891ACA8446003352FD /* Supporting Files */ = {
@@ -127,9 +129,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BBDCF06F1ACA8446003352FD /* SwiftTryCatch */ = {
+		BBDCF06F1ACA8446003352FD /* SwiftFlow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BBDCF08F1ACA8446003352FD /* Build configuration list for PBXNativeTarget "SwiftTryCatch" */;
+			buildConfigurationList = BBDCF08F1ACA8446003352FD /* Build configuration list for PBXNativeTarget "SwiftFlow" */;
 			buildPhases = (
 				BBDCF06C1ACA8446003352FD /* Sources */,
 				BBDCF06D1ACA8446003352FD /* Frameworks */,
@@ -139,14 +141,14 @@
 			);
 			dependencies = (
 			);
-			name = SwiftTryCatch;
-			productName = SwiftTryCatch;
-			productReference = BBDCF0701ACA8446003352FD /* SwiftTryCatch.app */;
+			name = SwiftFlow;
+			productName = SwiftFlow;
+			productReference = BBDCF0701ACA8446003352FD /* SwiftFlow.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BBDCF0841ACA8446003352FD /* SwiftTryCatchTests */ = {
+		BBDCF0841ACA8446003352FD /* SwiftFlowTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BBDCF0921ACA8446003352FD /* Build configuration list for PBXNativeTarget "SwiftTryCatchTests" */;
+			buildConfigurationList = BBDCF0921ACA8446003352FD /* Build configuration list for PBXNativeTarget "SwiftFlowTests" */;
 			buildPhases = (
 				BBDCF0811ACA8446003352FD /* Sources */,
 				BBDCF0821ACA8446003352FD /* Frameworks */,
@@ -157,9 +159,9 @@
 			dependencies = (
 				BBDCF0871ACA8446003352FD /* PBXTargetDependency */,
 			);
-			name = SwiftTryCatchTests;
-			productName = SwiftTryCatchTests;
-			productReference = BBDCF0851ACA8446003352FD /* SwiftTryCatchTests.xctest */;
+			name = SwiftFlowTests;
+			productName = SwiftFlowTests;
+			productReference = BBDCF0851ACA8446003352FD /* SwiftFlowTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -180,7 +182,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BBDCF06B1ACA8446003352FD /* Build configuration list for PBXProject "SwiftTryCatch" */;
+			buildConfigurationList = BBDCF06B1ACA8446003352FD /* Build configuration list for PBXProject "SwiftFlow" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -193,8 +195,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BBDCF06F1ACA8446003352FD /* SwiftTryCatch */,
-				BBDCF0841ACA8446003352FD /* SwiftTryCatchTests */,
+				BBDCF06F1ACA8446003352FD /* SwiftFlow */,
+				BBDCF0841ACA8446003352FD /* SwiftFlowTests */,
 			);
 		};
 /* End PBXProject section */
@@ -225,8 +227,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBDCF0781ACA8446003352FD /* ViewController.swift in Sources */,
-				BBDCF09A1ACA8D40003352FD /* SwiftTryCatch.m in Sources */,
-				BBDCF0961ACA8CAB003352FD /* SwiftTryCatch.swift in Sources */,
+				BBDCF09A1ACA8D40003352FD /* SwiftFlow.m in Sources */,
+				BBDCF0961ACA8CAB003352FD /* SwiftFlow.swift in Sources */,
 				BBDCF0761ACA8446003352FD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,7 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBDCF08C1ACA8446003352FD /* SwiftTryCatchTests.swift in Sources */,
+				BBDCF08C1ACA8446003352FD /* SwiftFlowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +246,7 @@
 /* Begin PBXTargetDependency section */
 		BBDCF0871ACA8446003352FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BBDCF06F1ACA8446003352FD /* SwiftTryCatch */;
+			target = BBDCF06F1ACA8446003352FD /* SwiftFlow */;
 			targetProxy = BBDCF0861ACA8446003352FD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -353,10 +355,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = SwiftTryCatch/Info.plist;
+				INFOPLIST_FILE = SwiftFlow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTryCatch/SwiftTryCatch-Bridging-Header.h";
+				PRODUCT_NAME = SwiftFlow;
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftFlow/SwiftFlow-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -366,10 +368,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = SwiftTryCatch/Info.plist;
+				INFOPLIST_FILE = SwiftFlow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTryCatch/SwiftTryCatch-Bridging-Header.h";
+				PRODUCT_NAME = SwiftFlow;
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftFlow/SwiftFlow-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -385,10 +387,10 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SwiftTryCatchTests/Info.plist;
+				INFOPLIST_FILE = SwiftFlowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftTryCatch.app/SwiftTryCatch";
+				PRODUCT_NAME = SwiftFlowTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftFlow.app/SwiftFlow";
 			};
 			name = Debug;
 		};
@@ -400,17 +402,17 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SwiftTryCatchTests/Info.plist;
+				INFOPLIST_FILE = SwiftFlowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftTryCatch.app/SwiftTryCatch";
+				PRODUCT_NAME = SwiftFlowTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftFlow.app/SwiftFlow";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BBDCF06B1ACA8446003352FD /* Build configuration list for PBXProject "SwiftTryCatch" */ = {
+		BBDCF06B1ACA8446003352FD /* Build configuration list for PBXProject "SwiftFlow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BBDCF08D1ACA8446003352FD /* Debug */,
@@ -419,21 +421,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BBDCF08F1ACA8446003352FD /* Build configuration list for PBXNativeTarget "SwiftTryCatch" */ = {
+		BBDCF08F1ACA8446003352FD /* Build configuration list for PBXNativeTarget "SwiftFlow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BBDCF0901ACA8446003352FD /* Debug */,
 				BBDCF0911ACA8446003352FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		BBDCF0921ACA8446003352FD /* Build configuration list for PBXNativeTarget "SwiftTryCatchTests" */ = {
+		BBDCF0921ACA8446003352FD /* Build configuration list for PBXNativeTarget "SwiftFlowTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BBDCF0931ACA8446003352FD /* Debug */,
 				BBDCF0941ACA8446003352FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
