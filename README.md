@@ -127,6 +127,7 @@ Finally a means of executing background operations in dispatch groups as per [Jo
 } | {
     println("Completed on main thread\(i)")
 };
+```
 
 There are versions of these operators where the background task return a value which is forwarded onto the completeion task on the main thread in an array. Sometimes you need to use a semicolon on the line before using closures in this way.
 
