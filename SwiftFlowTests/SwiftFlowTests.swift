@@ -28,7 +28,7 @@ class SwiftFlowTests: XCTestCase {
         if let url = NSURL( string: "https://github.com/\(U(user))/\(repo)" ) {
             var error: NSError?
             if let string = NSString( contentsOfURL: url, encoding: NSUTF8StringEncoding, error: &error ) {
-                return string
+                return string as String
             } else {
                 _throw( NSException( name: "fetchURL: Could not fetch",
                     reason: U(error).localizedDescription, userInfo: nil ) )
@@ -95,9 +95,9 @@ class SwiftFlowTests: XCTestCase {
         XCTAssert(!gotException, "Pass")
 
         var exceuted = false
-        _synchronized {
+        _synchronized( {
             exceuted = true
-        }
+        } )
         XCTAssert(exceuted, "Pass")
 
         exceuted = false

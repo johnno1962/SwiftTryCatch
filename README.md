@@ -106,30 +106,50 @@ public func _synchronized( section: () -> (), key: String = "\(__FILE__):\(__LIN
 }
 ```
 
-Finally a means of executing background operations in dispatch groups as per [Josh Smith](http://ijoshsmith.com/2014/07/05/custom-threading-operator-in-swift/) but using the & and | operators in line with a shell.
+### Some threading operators
 
-```swift
-{
-    println("Background Task #1")
-    for var i=0 ; i<10000000 ; i++ {
-    }
-    println("\(i++)")
-} & {
-    println("Background Task #2")
-    for var i=0 ; i<20000000 ; i++ {
-    }
-    println("\(i++)")
-} & {
-    println("Background Task #3")
-    for var i=0 ; i<30000000 ; i++ {
-    }
-    println("\(i++)")
-} | {
-    println("Completed on main thread\(i)")
-};
+As an excercise I've added in my take on Josh Smith's 
+[custom threading operators](http://ijoshsmith.com/2014/07/05/custom-threading-operator-in-swift/)
+for background process (adding dispatch groups.) The syntax is taken from UNIX shell.
+For example, the following processes the first group in a background thread then
+passes the result back to the main thread to print it out:
+
+```Swift
+    {
+        // async background
+        return 99
+    } | {
+        // main thread again
+        (result:Int) in
+        println("\(result)")
+    };
 ```
 
-There are versions of these operators where the background task return a value which is forwarded onto the completeion task on the main thread in an array. Sometimes you need to use a semicolon on the line before using closures in this way.
+This works for thread groups as well where multiple blocks are executed in 
+parallel again following shell syntax where multiple parallel blocks are
+separated by the & operator. The array of their results are passed back 
+to the main thread using the pipe operator as before:
+
+```Swift
+    {
+        // thread 1
+        return 77
+    } & {
+        // thread 2
+        return 88
+    } & {
+        // thread 3
+        return 99
+    } | {
+        // main thread
+        (results:[Int!]) in
+        println("\(results)")
+    };
+```
+
+There are also & and | operators for when no value is passed between the blocks.
+The semicolon is necessary as is one on the line previous to using these
+operators.
 
 ### Public domain License
 
