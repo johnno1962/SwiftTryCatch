@@ -10,7 +10,7 @@ import Foundation
 
 // throw exception on invalid unwrap (in production only)
 
-public func U<T>( toUnwrap: T!, name: String? = nil,  file: String = __FILE__, line: Int = __LINE__ ) -> T {
+public func unwrap<T>( toUnwrap: T!, name: String? = nil,  file: String = __FILE__, line: Int = __LINE__ ) -> T {
     #if !DEBUG
     if toUnwrap == nil {
         let exceptionName = name != nil ? "Forced unwrap of \(name) fail" : "Forced unwrap fail"
@@ -102,7 +102,7 @@ public func | <R> (left: [() -> R], right: (results:[R!]) -> Void) {
     let group = dispatch_group_create()
 
     var results = Array<R!>()
-    for t in 0..<left.count {
+    for _ in 0..<left.count {
         results += [nil]
     }
 

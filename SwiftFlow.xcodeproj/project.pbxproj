@@ -95,7 +95,6 @@
 				BBDCF07E1ACA8446003352FD /* LaunchScreen.xib */,
 				BBDCF0731ACA8446003352FD /* Supporting Files */,
 			);
-			name = SwiftFlow;
 			path = SwiftFlow;
 			sourceTree = "<group>";
 		};
@@ -114,7 +113,6 @@
 				BBDCF08B1ACA8446003352FD /* SwiftFlowTests.swift */,
 				BBDCF0891ACA8446003352FD /* Supporting Files */,
 			);
-			name = SwiftFlowTests;
 			path = SwiftFlowTests;
 			sourceTree = "<group>";
 		};
@@ -170,6 +168,7 @@
 		BBDCF0681ACA8446003352FD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "John Holdsworth";
 				TargetAttributes = {

@@ -25,13 +25,13 @@ class SwiftFlowTests: XCTestCase {
     var user: String?
 
     func fetchURL( repo: String ) -> String? {
-        if let url = NSURL( string: "https://github.com/\(U(user))/\(repo)" ) {
-            var error: NSError?
-            if let string = NSString( contentsOfURL: url, encoding: NSUTF8StringEncoding, error: &error ) {
+        if let url = NSURL( string: "https://github.com/\(unwrap(user))/\(repo)" ) {
+            do {
+                let string = try NSString( contentsOfURL: url, encoding: NSUTF8StringEncoding )
                 return string as String
-            } else {
+            } catch var error as NSError {
                 _throw( NSException( name: "fetchURL: Could not fetch",
-                    reason: U(error).localizedDescription, userInfo: nil ) )
+                    reason: error.localizedDescription, userInfo: nil ) )
             }
         } else {
             _throw( NSException( name: "fetchURL", reason: "Invalid URL", userInfo: nil) )
@@ -44,7 +44,7 @@ class SwiftFlowTests: XCTestCase {
 
         var gotException = false
         _try {
-            let result = self.fetchURL( "SwiftFlow" )
+            _ = self.fetchURL( "SwiftFlow" )
         }
         _catch {
             (exception) in
@@ -54,7 +54,7 @@ class SwiftFlowTests: XCTestCase {
 
         gotException = false
         _try {
-            let tmp = U(self.user)
+            _ = unwrap(self.user)
         }
         _catch {
             (exception) in
@@ -66,7 +66,7 @@ class SwiftFlowTests: XCTestCase {
 
         gotException = false
         _try {
-            let tmp = U(self.user)
+            _ = unwrap(self.user)
         }
         _catch {
             (exception) in
@@ -76,7 +76,7 @@ class SwiftFlowTests: XCTestCase {
 
         gotException = false
         _try {
-            let result = self.fetchURL( "Cabbage" )
+            _ = self.fetchURL( "Cabbage" )
         }
         _catch {
             (exception) in
@@ -86,7 +86,7 @@ class SwiftFlowTests: XCTestCase {
 
         gotException = false
         _try {
-            let result = self.fetchURL( "SwiftFlow" )
+            _ = self.fetchURL( "SwiftFlow" )
         }
         _catch {
             (exception) in
@@ -109,29 +109,29 @@ class SwiftFlowTests: XCTestCase {
         var i = 0; //
 
         {
-            println("Task #1")
+            print("Task #1")
             for var i=0 ; i<10000000 ; i++ {
             }
-            println("\(i++)")
+            print("\(i++)")
         } & {
-            println("Task #2")
+            print("Task #2")
             for var i=0 ; i<20000000 ; i++ {
             }
-            println("\(i++)")
+            print("\(i++)")
         } & {
-            println("Task #3")
+            print("Task #3")
             for var i=0 ; i<30000000 ; i++ {
             }
-            println("\(i++)")
+            print("\(i++)")
         } | {
-            println("Completed \(i)")
+            print("Completed \(i)")
         };
 
         {
             return 99
         } | {
             (result:Int) in
-            println("\(result)")
+            print("\(result)")
         };
 
         {
@@ -140,7 +140,7 @@ class SwiftFlowTests: XCTestCase {
             return 99
         } | {
             (results:[Int!]) in
-            println("\(results)")
+            print("\(results)")
         };
     }
 
