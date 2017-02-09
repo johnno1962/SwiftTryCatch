@@ -48,7 +48,7 @@ public func _synchronized( _ section: @escaping () -> (), key: String = "\(#file
 // a take on shell-like custom threading operators after:
 // http://ijoshsmith.com/2014/07/05/custom-threading-operator-in-swift/
 
-private let _queue = DispatchQueue(label: "SwiftFlow")
+private let _queue = DispatchQueue(label: "SwiftFlow", attributes: .concurrent)
 
 public func | (left: @escaping () -> Void, right: @escaping () -> Void) {
     _queue.async() {
