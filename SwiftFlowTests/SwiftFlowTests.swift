@@ -24,17 +24,17 @@ class SwiftFlowTests: XCTestCase {
 
     var user: String?
 
-    func fetchURL( repo: String ) -> String? {
-        if let url = NSURL( string: "https://github.com/\(unwrap(user))/\(repo)" ) {
+    func fetchURL( _ repo: String ) -> String? {
+        if let url = URL( string: "https://github.com/\(unwrap(user))/\(repo)" ) {
             do {
-                let string = try NSString( contentsOfURL: url, encoding: NSUTF8StringEncoding )
+                let string = try NSString( contentsOf: url, encoding: String.Encoding.utf8.rawValue )
                 return string as String
-            } catch var error as NSError {
-                _throw( NSException( name: "fetchURL: Could not fetch",
+            } catch let error as NSError {
+                _throw( NSException( name: NSExceptionName(rawValue: "fetchURL: Could not fetch"),
                     reason: error.localizedDescription, userInfo: nil ) )
             }
         } else {
-            _throw( NSException( name: "fetchURL", reason: "Invalid URL", userInfo: nil) )
+            _throw( NSException( name: NSExceptionName(rawValue: "fetchURL"), reason: "Invalid URL", userInfo: nil) )
         }
         return nil
     }
@@ -110,19 +110,22 @@ class SwiftFlowTests: XCTestCase {
 
         {
             print("Task #1")
-            for var i=0 ; i<10000000 ; i++ {
+            for _ in 0  ..< 10000000  {
             }
-            print("\(i++)")
+            print("\(i)")
+            i += 1
         } & {
             print("Task #2")
-            for var i=0 ; i<20000000 ; i++ {
+            for _ in 0  ..< 20000000  {
             }
-            print("\(i++)")
+            print("\(i)")
+            i += 1
         } & {
             print("Task #3")
-            for var i=0 ; i<30000000 ; i++ {
+            for _ in 0  ..< 30000000  {
             }
-            print("\(i++)")
+            print("\(i)")
+            i += 1
         } | {
             print("Completed \(i)")
         };
@@ -139,14 +142,14 @@ class SwiftFlowTests: XCTestCase {
         } & {
             return 99
         } | {
-            (results:[Int!]) in
+            (results:[Int?]) in
             print("\(results)")
         };
     }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
+        self.measure() {
             // Put the code you want to measure the time of here.
         }
     }

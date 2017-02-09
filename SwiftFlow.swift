@@ -10,11 +10,11 @@ import Foundation
 
 // throw exception on invalid unwrap (in production only)
 
-public func unwrap<T>( toUnwrap: T!, name: String? = nil,  file: String = __FILE__, line: Int = __LINE__ ) -> T {
+public func unwrap<T>(_ toUnwrap: T!, name: String? = nil,  file: String = #file, line: Int = #line ) -> T {
     #if !DEBUG
     if toUnwrap == nil {
         let exceptionName = name != nil ? "Forced unwrap of \(name) fail" : "Forced unwrap fail"
-        _throw( NSException( name: exceptionName, reason: "\(file), \(line)", userInfo: nil ) )
+        _throw( NSException( name: NSExceptionName(rawValue: exceptionName), reason: "\(file), \(line)", userInfo: nil ) )
     }
     #endif
     return toUnwrap!
@@ -25,7 +25,7 @@ public func unwrap<T>( toUnwrap: T!, name: String? = nil,  file: String = __FILE
 private let synchronizedKeyLock = NSLock()
 private var synchronizedSectionLocks = [String:NSLock]()
 
-public func _synchronized( section: () -> (), key: String = "\(__FILE__):\(__LINE__)" ) {
+public func _synchronized( _ section: @escaping () -> (), key: String = "\(#file):\(#line)" ) {
     synchronizedKeyLock.lock()
     if synchronizedSectionLocks[key] == nil {
         synchronizedSectionLocks[key] = NSLock()
@@ -45,61 +45,61 @@ public func _synchronized( section: () -> (), key: String = "\(__FILE__):\(__LIN
     }
 }
 
-// a take on custom threading operators from
+// a take on shell-like custom threading operators after:
 // http://ijoshsmith.com/2014/07/05/custom-threading-operator-in-swift/
 
-private let _queue = dispatch_queue_create("SwiftFlow", DISPATCH_QUEUE_CONCURRENT)
+private let _queue = DispatchQueue(label: "SwiftFlow")
 
-public func | (left: () -> Void, right: () -> Void) {
-    dispatch_async(_queue) {
+public func | (left: @escaping () -> Void, right: @escaping () -> Void) {
+    _queue.async() {
         left()
-        dispatch_async(dispatch_get_main_queue(), right)
+        DispatchQueue.main.async(execute: right)
     }
 }
 
-public func | <R> (left: () -> R, right: (result:R) -> Void) {
-    dispatch_async(_queue) {
+public func | <R> (left: @escaping () -> R, right: @escaping (_ result:R) -> Void) {
+    _queue.async() {
         let result = left()
-        dispatch_async(dispatch_get_main_queue(), {
-            right(result:result)
+        DispatchQueue.main.async(execute: {
+            right(result)
         })
     }
 }
 
 // dispatch groups { block } & { block } | { completion }
-public func & (left: () -> Void, right: () -> Void) -> [() -> Void] {
+public func & (left: @escaping () -> Void, right: @escaping () -> Void) -> [() -> Void] {
     return [left, right]
 }
 
-public func & (left: [() -> Void], right: () -> Void) -> [() -> Void] {
+public func & (left: [() -> Void], right: @escaping () -> Void) -> [() -> Void] {
     var out = left
     out.append( right )
     return out
 }
 
-public func | (left: [() -> Void], right: () -> Void) {
-    let group = dispatch_group_create()
+public func | (left: [() -> Void], right: @escaping () -> Void) {
+    let group = DispatchGroup()
 
     for block in left {
-        dispatch_group_async(group, _queue, block)
+        __dispatch_group_async(group, _queue, block)
     }
 
-    dispatch_group_notify(group, dispatch_get_main_queue(), right)
+    __dispatch_group_notify(group, DispatchQueue.main, right)
 }
 
 // parallel processing blocks with returns
-public func & <R> (left: () -> R, right: () -> R) -> [() -> R] {
+public func & <R> (left: @escaping () -> R, right: @escaping () -> R) -> [() -> R] {
     return [left, right]
 }
 
-public func & <R> (left: [() -> R], right: () -> R) -> [() -> R] {
+public func & <R> (left: [() -> R], right: @escaping () -> R) -> [() -> R] {
     var out = left
     out.append( right )
     return out
 }
 
-public func | <R> (left: [() -> R], right: (results:[R!]) -> Void) {
-    let group = dispatch_group_create()
+public func | <R> (left: [() -> R], right: @escaping (_ results:[R?]) -> Void) {
+    let group = DispatchGroup()
 
     var results = Array<R!>()
     for _ in 0..<left.count {
@@ -107,14 +107,14 @@ public func | <R> (left: [() -> R], right: (results:[R!]) -> Void) {
     }
 
     for t in 0..<left.count {
-        dispatch_group_enter(group)
-        dispatch_async(_queue, {
+        group.enter()
+        _queue.async(execute: {
             results[t] = left[t]()
-            dispatch_group_leave(group)
+            group.leave()
         })
     }
 
-    dispatch_group_notify(group, dispatch_get_main_queue(), {
-        right(results: results)
+    __dispatch_group_notify(group, DispatchQueue.main, {
+        right(results)
     })
 }
